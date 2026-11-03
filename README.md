@@ -49,7 +49,7 @@ Fragen, Fehler, Ideen: **[Discord](https://discord.gg/vuUvq2x89)** oder per E-Ma
 
 ## Kontakt
 
-Jannes Deising, Ormgatan 6, Mariestad, Schweden · jannes23.deising11@gmail.com
+Jannes Deising · jannes23.deising11@gmail.com
 
 ---
 
