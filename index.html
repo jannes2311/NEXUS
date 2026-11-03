@@ -1,0 +1,201 @@
+TEST123<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXUS – KI-Sprachassistent für Windows</title>
+<meta name="description" content="Sag „Nexus“ und dein PC hört zu. Der deutsche KI-Sprachassistent für Windows – kostenlos oder als Pro mit Claude.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07090f; --bg2:#0d111b; --card:#111725; --line:#1f2738;
+    --text:#e8ecf4; --muted:#8f9ab0; --accent:#5ee1ff; --accent2:#8b5cf6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:5;background:rgba(7,9,15,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font:700 20px "Space Grotesk",sans-serif;letter-spacing:.18em;text-decoration:none}
+  .logo span{color:var(--accent)}
+  nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:15px}
+  nav a:hover{color:var(--text)}
+  .hero{position:relative;padding:110px 0 90px;text-align:center;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-40% -20% auto;height:640px;
+    background:radial-gradient(closest-side,rgba(94,225,255,.18),transparent 70%),radial-gradient(closest-side at 70% 60%,rgba(139,92,246,.18),transparent 70%);pointer-events:none}
+  .orb{width:120px;height:120px;margin:0 auto 34px;border-radius:50%;position:relative;
+    background:radial-gradient(circle at 35% 30%,#bff3ff,var(--accent) 35%,var(--accent2) 75%,#1b1240);
+    box-shadow:0 0 60px rgba(94,225,255,.45),0 0 120px rgba(139,92,246,.3);animation:pulse 3.2s ease-in-out infinite}
+  @keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 80px rgba(94,225,255,.6),0 0 160px rgba(139,92,246,.4)}}
+  @media (prefers-reduced-motion:reduce){.orb{animation:none}}
+  h1{font:700 clamp(36px,7vw,64px)/1.08 "Space Grotesk",sans-serif;letter-spacing:-.02em}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:620px;margin:22px auto 0;color:var(--muted);font-size:18px}
+  .ctas{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 26px;border-radius:12px;font-weight:600;text-decoration:none;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#05070c;box-shadow:0 8px 30px rgba(94,225,255,.25)}
+  .btn.ghost{border:1px solid var(--line);background:var(--card)}
+  .note{margin-top:14px;font-size:13px;color:var(--muted)}
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  h2{font:700 clamp(26px,4vw,36px)/1.2 "Space Grotesk",sans-serif;text-align:center}
+  .sub{text-align:center;color:var(--muted);margin-top:10px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:44px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card h3{font:600 17px "Space Grotesk",sans-serif;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:15px}
+  .ico{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;margin-bottom:14px;background:rgba(94,225,255,.1);color:var(--accent)}
+  .say{display:inline-block;font-family:"Space Grotesk",sans-serif;color:var(--accent);font-size:14px;margin-top:10px}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:44px;max-width:780px;margin-left:auto;margin-right:auto}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column}
+  .plan.pro{border-color:transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,var(--accent),var(--accent2)) border-box;border:1.5px solid transparent}
+  .plan h3{font:700 22px "Space Grotesk",sans-serif}
+  .price{font:700 40px "Space Grotesk",sans-serif;margin:10px 0 2px}
+  .price small{font-size:15px;color:var(--muted);font-weight:500}
+  .plan ul{list-style:none;margin:20px 0 26px;flex:1}
+  .plan li{padding:7px 0 7px 28px;position:relative;color:#cfd6e4;font-size:15px}
+  .plan li::before{content:"";position:absolute;left:0;top:12px;width:16px;height:16px;border-radius:50%;background:rgba(94,225,255,.15)}
+  .plan li::after{content:"";position:absolute;left:5px;top:16px;width:6px;height:4px;border:2px solid var(--accent);border-top:0;border-right:0;transform:rotate(-45deg)}
+  .plan .btn{text-align:center}
+  .tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .steps{counter-reset:s;max-width:640px;margin:40px auto 0;list-style:none}
+  .steps li{counter-increment:s;position:relative;padding:0 0 22px 52px;color:#cfd6e4}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:600 15px "Space Grotesk",sans-serif;background:var(--card);border:1px solid var(--line);color:var(--accent)}
+  .steps b{color:var(--text)}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:12px}
+  summary{cursor:pointer;font-weight:600}
+  details p{color:var(--muted);margin-top:10px;font-size:15px}
+  .faq{max-width:700px;margin:40px auto 0}
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}
+  footer h4{color:var(--text);font-size:14px;margin-bottom:6px}
+  @media (max-width:600px){nav a:not(.keep){display:none}.hero{padding:80px 0 70px}section{padding:60px 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">N<span>E</span>XUS</a>
+    <nav>
+      <a href="#funktionen">Funktionen</a>
+      <a href="#preise">Preise</a>
+      <a href="#faq">FAQ</a>
+      <a class="keep" href="https://discord.gg/vuUvq2x89">Discord</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="orb" aria-hidden="true"></div>
+      <h1>Sag <em>„Nexus“</em>.<br>Dein PC hört zu.</h1>
+      <p class="lead">Der deutsche KI-Sprachassistent für Windows. Programme öffnen, Musik steuern, Termine verwalten, im Web suchen – einfach per Stimme.</p>
+      <div class="ctas">
+        <a class="btn primary" href="https://github.com/jannes2311/NEXUS/releases/latest/download/Nexus_Setup.exe">Kostenlos herunterladen</a>
+        <a class="btn ghost" href="#preise">Nexus Pro ansehen</a>
+      </div>
+      <p class="note">Windows 10 / 11 · Deutsch · kostenlos starten</p>
+    </div>
+  </div>
+
+  <section id="funktionen">
+    <div class="wrap">
+      <h2>Was Nexus für dich erledigt</h2>
+      <p class="sub">Ein Wort genügt – Nexus erledigt den Rest.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">▶</div><h3>Programme &amp; System</h3><p>Apps öffnen, Lautstärke und Helligkeit regeln, Systemstatus abfragen.</p><span class="say">„Nexus, öffne Chrome.“</span></div>
+        <div class="card"><div class="ico">⌕</div><h3>Websuche &amp; Dateien</h3><p>Antworten aus dem Netz und Dateien auf deinem PC finden.</p><span class="say">„Nexus, wie wird das Wetter?“</span></div>
+        <div class="card"><div class="ico">♪</div><h3>Musik</h3><p>Spotify starten, pausieren, Songs wechseln – ohne die Maus anzufassen.</p><span class="say">„Nexus, spiel meine Playlist.“</span></div>
+        <div class="card"><div class="ico">◷</div><h3>Termine &amp; Routinen</h3><p>Kalender abfragen, Erinnerungen setzen, eigene Abläufe starten.</p><span class="say">„Nexus, was steht heute an?“</span></div>
+        <div class="card"><div class="ico">◎</div><h3>Gedächtnis</h3><p>Nexus merkt sich, was dir wichtig ist, und erinnert sich beim nächsten Mal daran.</p><span class="say">„Nexus, merk dir …“</span></div>
+        <div class="card"><div class="ico">✦</div><h3>Claude als Gehirn</h3><p>In Pro denkt Nexus mit Claude – deutlich klüger, auch bei komplexen Aufgaben.</p><span class="say">Nur in Pro</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preise">
+    <div class="wrap">
+      <h2>Kostenlos starten, Pro freischalten</h2>
+      <p class="sub">Ein Download für beide Versionen – Pro wird per Lizenzschlüssel aktiviert.</p>
+      <div class="plans">
+        <div class="plan">
+          <span class="tag">Nexus</span>
+          <h3>Kostenlos</h3>
+          <div class="price">0 €</div>
+          <ul>
+            <li>Läuft komplett lokal</li>
+            <li>Programme, Lautstärke, Helligkeit</li>
+            <li>Websuche und Dateisuche</li>
+            <li>Gedächtnis</li>
+          </ul>
+          <a class="btn ghost" href="https://github.com/jannes2311/NEXUS/releases/latest/download/Nexus_Setup.exe">Herunterladen</a>
+        </div>
+        <div class="plan pro">
+          <span class="tag">Nexus Pro</span>
+          <h3>Pro</h3>
+          <div class="price">6 € <small>einmalig</small></div>
+          <ul>
+            <li>Alles aus der Gratis-Version</li>
+            <li>Claude als Gehirn</li>
+            <li>Premium-Stimmen</li>
+            <li>Kalender, Spotify, Routinen, Claude Code</li>
+            <li>Zugang zum Pro-Bereich im Discord</li>
+          </ul>
+          <a class="btn primary" href="https://jannes.lemonsqueezy.com/checkout/buy/d5d4e202-e380-4380-8ffd-71fdfeae82a6">Nexus Pro kaufen</a>
+        </div>
+      </div>
+      <p class="note" style="text-align:center;margin-top:20px">Pro benötigt einen eigenen Claude-API-Schlüssel von Anthropic; die Nutzungskosten rechnet Anthropic direkt ab. Sichere Zahlung über Lemon Squeezy.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>In drei Minuten startklar</h2>
+      <ol class="steps">
+        <li><b>Herunterladen</b> und <code>Nexus_Setup.exe</code> starten.</li>
+        <li>Erscheint „Der Computer wurde durch Windows geschützt“: <b>Weitere Informationen → Trotzdem ausführen</b>.</li>
+        <li>Nexus starten und <b>„Nexus“</b> sagen. Beim ersten Start wird einmalig die Spracherkennung geladen.</li>
+        <li>Pro gekauft? Lizenzschlüssel unter <b>Einstellungen → Lizenz</b> eintragen.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>Häufige Fragen</h2>
+      <div class="faq">
+        <details><summary>Warum warnt Windows beim Installieren?</summary><p>Windows warnt bei neuen Programmen ohne kostenpflichtige Code-Signatur. Nexus ist sicher – klick auf „Weitere Informationen“ und dann „Trotzdem ausführen“.</p></details>
+        <details><summary>Brauche ich für Pro einen eigenen Claude-Schlüssel?</summary><p>Ja. Du erstellst ihn bei Anthropic und trägst ihn in Nexus ein. Die Kosten richten sich nach deiner Nutzung und werden von Anthropic direkt abgerechnet.</p></details>
+        <details><summary>Auf wie vielen PCs kann ich Pro nutzen?</summary><p>Eine Lizenz gilt für einen PC. Neuer PC? Melde dich im Discord, dann setzen wir die Aktivierung zurück.</p></details>
+        <details><summary>Ich habe meinen Lizenzschlüssel verloren.</summary><p>Such in deinem Postfach nach der Mail von Lemon Squeezy oder melde dich im Discord.</p></details>
+        <details><summary>Kann ich mein Geld zurückbekommen?</summary><p>Ja, innerhalb von 14 Tagen nach dem Kauf ohne Angabe von Gründen. Schreib dazu eine E-Mail oder melde dich im Discord.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>NEXUS</h4>
+      <p>© 2026 Jannes Deising</p>
+    </div>
+    <div>
+      <h4>Kontakt &amp; Impressum</h4>
+      <p>Jannes Deising<br>Ormgatan 6<br>Mariestad, Schweden<br><a href="mailto:jannes23.deising11@gmail.com">jannes23.deising11@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <p><a href="https://discord.gg/vuUvq2x89">Discord</a> · <a href="https://github.com/jannes2311/NEXUS/releases">Releases</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
